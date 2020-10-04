@@ -29,26 +29,3 @@ class Flex : AppCompatActivity() {
 
     }
 }
-
-
-/*class TestUrl(){
-    private var news : String = ""
-    init {
-
-        var okHttpClient: OkHttpClient = OkHttpClient()
-        val request: Request = Request.Builder().url(url).build()
-        val response : Response = okHttpClient.newCall(request).execute()
-
-        if(response.isSuccessful){
-            news = (JSONObject(response!!.body()!!.string()).getJSONArray("articles").getJSONObject(0).get("author").toString())
-        }
-        else
-        {
-            news = "Ошибочка!"
-        }
-
-    }
-    fun get_author() : String
-    {
-        return news
-    }*/

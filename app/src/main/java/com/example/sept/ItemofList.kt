@@ -20,13 +20,6 @@ class News(url : String) {
         return countNews
     }
 
-    fun getListContentNews() : MutableList<String> {
-        return listContents
-    }
-    fun getListImage() : MutableList<String> {
-        return listImage
-    }
-
     fun getContentNews(index : Int) : String{
         return listContents.get(index)
     }
@@ -48,7 +41,6 @@ class News(url : String) {
 
         val httpClient : OkHttpClient = OkHttpClient()
         val request : Request = Request.Builder().url(changenews.replace("country=us", "country=$Flexcountry").replace("q=", "q=$Flexq")).build()
-        //хм..
         val response: Response = httpClient.newCall(request).execute()
         var json : String = ""
 
@@ -72,14 +64,10 @@ class News(url : String) {
             }
 
             countNews = count
-
-            /*Log.d("Debug", countNews.toString())
-            Log.d("Debug", changenews.replace("country=us", "country=$Flexcountry").replace("q=", "q=$Flexq"))
-            Log.d("Debug", Flexq)*/
         }
         else
         {
-            listContents.add("Error")
+            listContents.add("Error!")
             listImage.add("Error!")
             countNews = 1
         }
